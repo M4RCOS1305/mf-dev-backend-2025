@@ -1,13 +1,10 @@
+
 ﻿namespace mf_dev_backend_2025.Models
 {
-    using Microsoft.EntityFrameworkCore;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
-    public class AppDbContext : DbContext
+    public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
         public DbSet<Veiculos> Veiculos { get; set; }
+        public DbSet<Consumo> Consumo { get; set; }
     }
 }
